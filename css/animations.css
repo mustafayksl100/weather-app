@@ -1,0 +1,332 @@
+/* ============================================
+   WeatherApp - Animations
+   ============================================ */
+
+/* Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slide Up */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide In from Right */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Bounce */
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Pulse */
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+/* Float */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Weather Icon Animation */
+.weather-icon.animated {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Card Entrance Animations */
+.weather-card {
+    animation: slideUp 0.5s ease forwards;
+}
+
+.current-weather-section .weather-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.current-weather-section .weather-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.side-cards .weather-card:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.side-cards .weather-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.air-quality-section .weather-card:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.air-quality-section .weather-card:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.air-quality-section .weather-card:nth-child(3) {
+    animation-delay: 0.7s;
+}
+
+/* Hourly Item Stagger */
+.hourly-item {
+    opacity: 0;
+    animation: slideUp 0.4s ease forwards;
+}
+
+.hourly-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.hourly-item:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.hourly-item:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.hourly-item:nth-child(4) {
+    animation-delay: 0.25s;
+}
+
+.hourly-item:nth-child(5) {
+    animation-delay: 0.3s;
+}
+
+.hourly-item:nth-child(6) {
+    animation-delay: 0.35s;
+}
+
+.hourly-item:nth-child(7) {
+    animation-delay: 0.4s;
+}
+
+.hourly-item:nth-child(8) {
+    animation-delay: 0.45s;
+}
+
+/* Daily Item Stagger */
+.daily-item {
+    opacity: 0;
+    animation: slideInRight 0.4s ease forwards;
+}
+
+.daily-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.daily-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.daily-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.daily-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.daily-item:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+/* Detail Card Hover */
+.detail-card {
+    transition: transform var(--transition-fast), background var(--transition-fast);
+}
+
+.detail-card:hover {
+    transform: translateY(-3px);
+    background: var(--surface-tertiary);
+}
+
+/* Button Press Effect */
+button:active {
+    transform: scale(0.96);
+}
+
+/* Loading Shimmer */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.skeleton {
+    background: linear-gradient(90deg,
+            var(--surface-secondary) 25%,
+            var(--surface-tertiary) 50%,
+            var(--surface-secondary) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: var(--radius-md);
+}
+
+/* Sun Arc Animation */
+.sun-position {
+    transition: left 1s ease-out;
+}
+
+/* UV Indicator Animation */
+.uv-indicator {
+    transition: left 1s ease-out;
+}
+
+/* Toast Animations */
+@keyframes toastIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes toastOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.toast {
+    animation: toastIn 0.3s ease forwards;
+}
+
+.toast.hide {
+    animation: toastOut 0.3s ease forwards;
+}
+
+/* Tab Content Transition */
+.forecast-content {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.forecast-content.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Modal Animations */
+.modal-overlay {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal {
+    transition: transform 0.3s ease;
+}
+
+/* Refresh Spin */
+@keyframes refreshSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.refreshing i {
+    animation: refreshSpin 1s linear infinite;
+}
+
+/* Rain Drop Animation */
+@keyframes rainDrop {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Snow Fall Animation */
+@keyframes snowFall {
+    0% {
+        transform: translateY(-10px) rotate(0deg);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}

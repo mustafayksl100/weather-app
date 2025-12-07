@@ -1,0 +1,115 @@
+/* ============================================
+   WeatherApp - Theme Styles
+   Minimalist & Stylish (Sade ve Şık)
+   ============================================ */
+
+/* Light Theme (Default) */
+[data-theme="light"] {
+    --bg-primary: #FAFAFA;
+    --bg-secondary: #FFFFFF;
+    --bg-gradient: linear-gradient(135deg, #F5F5F7 0%, #FFFFFF 100%);
+    
+    --surface-primary: #FFFFFF;
+    --surface-secondary: #F5F5F7;
+    --surface-tertiary: #E8E8ED;
+    
+    --text-primary: #1D1D1F;
+    --text-secondary: #86868B;
+    --text-tertiary: #BFBFBF;
+    
+    --border-primary: #E5E5E5;
+    --border-secondary: #D2D2D7;
+    
+    /* Apple Blue Accent */
+    --accent-primary: #0071E3;
+    
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.04);
+    --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+    --bg-primary: #000000;
+    --bg-secondary: #1C1C1E;
+    --bg-gradient: linear-gradient(135deg, #000000 0%, #101010 100%);
+    
+    --surface-primary: #1C1C1E;
+    --surface-secondary: #2C2C2E;
+    --surface-tertiary: #3A3A3C;
+    
+    --text-primary: #F5F5F7;
+    --text-secondary: #A1A1A6;
+    --text-tertiary: #6E6E73;
+    
+    --border-primary: #38383A;
+    --border-secondary: #48484A;
+    
+    /* Apple Blue Light Accent */
+    --accent-primary: #2997FF;
+    
+    --glass-bg: rgba(28, 28, 30, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.3);
+    --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Weather-based Dynamic Backgrounds - Subtle Tints only */
+.weather-sunny {
+    --weather-bg: rgba(255, 165, 0, 0.05);
+}
+
+.weather-clear-night {
+    --weather-bg: rgba(10, 10, 30, 0.05);
+}
+
+.weather-cloudy {
+    --weather-bg: rgba(100, 116, 139, 0.05);
+}
+
+.weather-rainy {
+    --weather-bg: rgba(59, 130, 246, 0.05);
+}
+
+.weather-snow {
+    --weather-bg: rgba(200, 220, 255, 0.05);
+}
+
+.weather-thunderstorm {
+    --weather-bg: rgba(70, 0, 70, 0.05);
+}
+
+/* Apply subtle tint to app container */
+.app-container {
+    background: var(--bg-primary);
+    position: relative;
+    z-index: 1;
+}
+
+.app-container::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--weather-bg, transparent);
+    z-index: -1;
+    pointer-events: none;
+    transition: background 1s ease;
+}
+
+/* Transitions */
+body,
+.app-container,
+.weather-card,
+.header,
+.stat-card,
+.forecast-item {
+    transition: 
+        background-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}

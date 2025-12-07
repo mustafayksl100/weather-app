@@ -1,0 +1,296 @@
+/* ============================================
+   WeatherApp - Responsive Styles
+   Mobile, Tablet, Desktop breakpoints
+   ============================================ */
+
+/* Large Desktop (> 1400px) - Default */
+
+/* Desktop (< 1400px) */
+@media (max-width: 1400px) {
+    .main-content {
+        padding: var(--spacing-lg);
+    }
+}
+
+/* Tablet Landscape (< 1200px) */
+@media (max-width: 1200px) {
+    .current-weather-section {
+        grid-template-columns: 1fr;
+    }
+
+    .side-cards {
+        flex-direction: row;
+    }
+
+    .side-cards .weather-card {
+        flex: 1;
+    }
+
+    .air-quality-section {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .alerts-card {
+        grid-column: span 2;
+    }
+
+    .forecast-content.active {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Tablet Portrait (< 992px) */
+@media (max-width: 992px) {
+    .header-content {
+        flex-wrap: wrap;
+        gap: var(--spacing-md);
+    }
+
+    .search-container {
+        order: 3;
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+
+    .air-quality-section {
+        grid-template-columns: 1fr;
+    }
+
+    .alerts-card {
+        grid-column: span 1;
+    }
+
+    .aqi-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .aqi-details {
+        width: 100%;
+    }
+}
+
+/* Mobile Landscape (< 768px) */
+@media (max-width: 768px) {
+    :root {
+        --spacing-xl: 1.5rem;
+        --spacing-2xl: 1.5rem;
+    }
+
+    .header-content {
+        gap: var(--spacing-sm);
+    }
+
+    .logo span {
+        display: none;
+        /* Hide text on mobile */
+    }
+
+    .search-container {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    /* Stack cards vertically */
+    .current-weather-section {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .side-cards {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .weather-details-grid {
+        grid-template-columns: 1fr 1fr;
+        /* 2 columns for details */
+        gap: var(--spacing-sm);
+    }
+
+    .temperature {
+        font-size: var(--text-5xl);
+    }
+
+    /* Adjust cards for mobile */
+    .weather-card {
+        padding: var(--spacing-lg);
+        border-radius: var(--radius-xl);
+    }
+
+    /* Stack AQI and other stats */
+    .air-quality-section {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .alerts-card {
+        grid-column: span 1;
+    }
+
+    .sun-times {
+        justify-content: space-around;
+        text-align: center;
+    }
+}
+
+/* Mobile Portrait (< 576px) */
+@media (max-width: 576px) {
+    .main-content {
+        padding: var(--spacing-md);
+    }
+
+    .header {
+        padding: var(--spacing-sm);
+    }
+
+    .search-box {
+        padding: 0.4rem 1rem;
+    }
+
+    .main-weather-card {
+        padding: var(--spacing-lg);
+    }
+
+    /* Stack details in 1 column on very small screens if needed, 
+       but 2 usually works. Let's keep 2 for density. */
+    .weather-details-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .detail-card {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--spacing-md);
+        gap: var(--spacing-xs);
+    }
+
+    .detail-card i {
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .hourly-scroll {
+        gap: var(--spacing-sm);
+        padding-bottom: var(--spacing-sm);
+        margin: 0 -1rem;
+        /* Full bleed scroll */
+        padding: 0 1rem var(--spacing-sm) 1rem;
+    }
+
+    .daily-item {
+        grid-template-columns: 1fr auto auto;
+        /* Stacked look */
+        gap: var(--spacing-sm);
+        padding: var(--spacing-md);
+        position: relative;
+    }
+
+    .daily-item .day {
+        font-size: var(--text-lg);
+    }
+
+    .daily-item img {
+        position: absolute;
+        right: var(--spacing-md);
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .daily-item .temp-bar {
+        display: none;
+        /* Hide bar on mobile */
+    }
+
+    .temp-range {
+        gap: var(--spacing-md);
+    }
+}
+
+/* Extra Small Devices (< 400px) */
+@media (max-width: 400px) {
+    .temperature {
+        font-size: var(--text-4xl);
+    }
+
+    .weather-icon-container {
+        width: 100px;
+        height: 100px;
+    }
+
+    .search-box {
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .search-box input {
+        font-size: var(--text-sm);
+    }
+
+    .location-btn {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* Landscape Mode Adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+    .weather-icon-container {
+        width: 80px;
+        height: 80px;
+    }
+
+    .temperature {
+        font-size: var(--text-4xl);
+    }
+
+    .current-weather {
+        margin-bottom: var(--spacing-md);
+    }
+}
+
+/* High DPI / Retina Displays */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    .weather-icon {
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .weather-icon.animated {
+        animation: none;
+    }
+}
+
+/* Print Styles */
+@media print {
+
+    .header,
+    .footer,
+    .settings-btn,
+    .theme-toggle {
+        display: none;
+    }
+
+    .weather-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+}
