@@ -259,19 +259,7 @@ const App = {
             }
         });
 
-        // Search input
-        let searchTimeout;
-        UI.elements.searchInput.addEventListener('input', (e) => {
-            clearTimeout(searchTimeout);
-            const query = e.target.value.trim();
-
-            if (query.length >= 2) {
-                searchTimeout = setTimeout(() => {
-                    this.searchCity(query);
-                }, 500);
-            }
-        });
-
+        // Search input - only search when Enter is pressed
         UI.elements.searchInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 const query = e.target.value.trim();
